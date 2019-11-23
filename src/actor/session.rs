@@ -37,10 +37,12 @@ impl Session {
                 ctx.state().ws.do_send(Disconnect { id: actor.0 });
 
                 ctx.stop();
+                
+                return;
             }
-        });
 
-        ctx.ping("");
+            ctx.ping("");
+        });
     }
 }
 
